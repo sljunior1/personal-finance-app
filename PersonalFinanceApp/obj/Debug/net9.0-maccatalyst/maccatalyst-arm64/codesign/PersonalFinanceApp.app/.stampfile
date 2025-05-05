@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/silasmovisis/Projetos/PersonalFinance/PersonalFinanceApp/obj/Debug/net9.0-maccatalyst/maccatalyst-arm64/Entitlements.xcent /Users/silasmovisis/Projetos/PersonalFinance/PersonalFinanceApp/bin/Debug/net9.0-maccatalyst/maccatalyst-arm64/PersonalFinanceApp.app

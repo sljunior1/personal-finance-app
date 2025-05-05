@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PersonalFinanceApp.Controls.TituloCustom">
+
+    <Grid ColumnDefinitions="Auto, *, Auto, Auto" HorizontalOptions="Fill" BackgroundColor="#FF2E2929">
+    
+    <ImageButton Grid.Column="0" Source="ic_add.png" HorizontalOptions="Start" IsVisible="{Binding IsVisibleAdicionar}"
+                  VerticalOptions="Center" Padding="10" HeightRequest="40" WidthRequest="40"
+                  Clicked="ImageButtonAdicionar_Clicked" />
+
+    <Label Grid.Column="1" Text="{Binding Titulo}" FontAttributes="Bold" FontSize="Caption" TextColor="White"
+           HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+
+    <ImageButton Grid.Column="2" Source="ic_ajuda.png" HorizontalOptions="End" Padding="10"
+                 IsVisible="{Binding IsVisibleAjuda}" VerticalOptions="Center"
+                 Clicked="ImageButtonAjuda_Clicked" HeightRequest="40" WidthRequest="40"/>
+
+    <ImageButton Grid.Column="3" Source="ic_config.png" HorizontalOptions="End" Padding="10"
+                 IsVisible="{Binding IsVisibleConfiguracao}" VerticalOptions="Center"
+                 Clicked="ImageButtonConfig_Clicked"/>
+
+    <Grid.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+    </Grid.GestureRecognizers>
+</Grid>
+
+</ContentView>

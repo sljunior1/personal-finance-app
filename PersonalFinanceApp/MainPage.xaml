@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:controls="clr-namespace:PersonalFinanceApp.Controls"
+             x:Class="PersonalFinanceApp.MainPage" BackgroundColor="#FF2E2929">
+             <ContentPage.Behaviors>
+                <toolkit:StatusBarBehavior StatusBarColor="#FF2E2929"/>
+             </ContentPage.Behaviors>
+<Grid Margin="0">
+      <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>   
+
+        <controls:TituloCustom Grid.Row="0" Titulo="PERSONAL FINANCE" />        
+        <VerticalStackLayout x:Name="panelSaudeFinanceira" Grid.Row="1" Padding="5" HorizontalOptions="Fill">
+            <Label x:Name="lblSaudeFinanceira" TextDecorations="Underline" 
+                   HorizontalOptions="Center" TextColor="Black" FontSize="Caption" 
+                   FontAttributes="Bold" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SaudeFinanceiraTapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </VerticalStackLayout>     
+        <Grid Grid.Row="2" BackgroundColor="White"></Grid>
+</Grid>
+</ContentPage>

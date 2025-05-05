@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:controls="clr-namespace:PersonalFinanceApp.Controls"
+             x:Class="PersonalFinanceApp.AjudaPage" BackgroundColor="#FF2E2929">
+             <ContentPage.Behaviors>
+                <toolkit:StatusBarBehavior StatusBarColor="#FF2E2929"/>
+             </ContentPage.Behaviors>
+<Grid Margin="0">
+      <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>   
+
+        <controls:TituloCustom Grid.Row="0" Titulo="COMO POSSO AJUDAR?" IsVisibleConfiguracao="False" />          
+        <Grid Grid.Row="1" BackgroundColor="White"></Grid>
+
+        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Padding="10">
+            <Editor x:Name="InputPergunta"
+                    Placeholder="Digite sua pergunta..."
+                    TextColor="White"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="#FF2E2929"
+                    FontSize="14"
+                    AutoSize="TextChanges"
+                    HeightRequest="80"
+                    VerticalOptions="Start"
+                    Margin="0"
+                    />
+
+            <Button Text="Enviar"
+                    Grid.Column="1"
+                    BackgroundColor="#0E76FD"
+                    TextColor="White"
+                    HeightRequest="40"
+                    Padding="15,0"/>
+        </Grid>
+</Grid>
+</ContentPage>

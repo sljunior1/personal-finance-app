@@ -1,0 +1,253 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net9.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PersonalFinanceApp
+build_property.ProjectDir = /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Controls/TituloCustom.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Controls.TituloCustom.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls/TituloCustom.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls/TituloCustom.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/AjudaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.AjudaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/AjudaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/AjudaPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/CartaoCredito/CartaoCreditoAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.CartaoCredito.CartaoCreditoAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/CartaoCredito/CartaoCreditoAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/CartaoCredito/CartaoCreditoAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/CartaoCredito/CartaoCreditoEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.CartaoCredito.CartaoCreditoEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/CartaoCredito/CartaoCreditoEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/CartaoCredito/CartaoCreditoEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/CartaoCredito/CartaoCreditoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.CartaoCredito.CartaoCreditoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/CartaoCredito/CartaoCreditoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/CartaoCredito/CartaoCreditoPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/Categoria/CategoriaAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.Categoria.CategoriaAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/Categoria/CategoriaAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/Categoria/CategoriaAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/Categoria/CategoriaEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.Categoria.CategoriaEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/Categoria/CategoriaEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/Categoria/CategoriaEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/Categoria/CategoriaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.Categoria.CategoriaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/Categoria/CategoriaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/Categoria/CategoriaPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/ConfiguracaoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.ConfiguracaoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/ConfiguracaoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/ConfiguracaoPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/ContaBancaria/ContaBancariaAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.ContaBancaria.ContaBancariaAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/ContaBancaria/ContaBancariaAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/ContaBancaria/ContaBancariaAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/ContaBancaria/ContaBancariaEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.ContaBancaria.ContaBancariaEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/ContaBancaria/ContaBancariaEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/ContaBancaria/ContaBancariaEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/ContaBancaria/ContaBancariaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.ContaBancaria.ContaBancariaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/ContaBancaria/ContaBancariaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/ContaBancaria/ContaBancariaPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/DistribuirRenda/DistribuirRendaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.DistribuirRenda.DistribuirRendaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/DistribuirRenda/DistribuirRendaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/DistribuirRenda/DistribuirRendaPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/FormaPagamento/FormaPagamentoAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.FormaPagamento.FormaPagamentoAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/FormaPagamento/FormaPagamentoAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/FormaPagamento/FormaPagamentoAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/FormaPagamento/FormaPagamentoEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.FormaPagamento.FormaPagamentoEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/FormaPagamento/FormaPagamentoEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/FormaPagamento/FormaPagamentoEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/FormaPagamento/FormaPagamentoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.FormaPagamento.FormaPagamentoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/FormaPagamento/FormaPagamentoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/FormaPagamento/FormaPagamentoPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/TipoGanho/TipoGanhoAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.TipoGanho.TipoGanhoAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/TipoGanho/TipoGanhoAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/TipoGanho/TipoGanhoAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/TipoGanho/TipoGanhoEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.TipoGanho.TipoGanhoEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/TipoGanho/TipoGanhoEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/TipoGanho/TipoGanhoEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/TipoGanho/TipoGanhoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.TipoGanho.TipoGanhoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/TipoGanho/TipoGanhoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/TipoGanho/TipoGanhoPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/TipoGasto/TipoGastoAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.TipoGasto.TipoGastoAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/TipoGasto/TipoGastoAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/TipoGasto/TipoGastoAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/TipoGasto/TipoGastoEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.TipoGasto.TipoGastoEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/TipoGasto/TipoGastoEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/TipoGasto/TipoGastoEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Configuracao/TipoGasto/TipoGastoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Configuracao.TipoGasto.TipoGastoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Configuracao/TipoGasto/TipoGastoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Configuracao/TipoGasto/TipoGastoPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Despesa/DespesaAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Despesa.DespesaAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Despesa/DespesaAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Despesa/DespesaAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Despesa/DespesaEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Despesa.DespesaEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Despesa/DespesaEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Despesa/DespesaEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Despesa/DespesaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Despesa.DespesaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Despesa/DespesaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Despesa/DespesaPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Meta/MetaAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Meta.MetaAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Meta/MetaAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Meta/MetaAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Meta/MetaEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Meta.MetaEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Meta/MetaEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Meta/MetaEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Meta/MetaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Meta.MetaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Meta/MetaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Meta/MetaPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Planejamento/PlanejamentoAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Planejamento.PlanejamentoAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Planejamento/PlanejamentoAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Planejamento/PlanejamentoAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Planejamento/PlanejamentoEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Planejamento.PlanejamentoEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Planejamento/PlanejamentoEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Planejamento/PlanejamentoEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Planejamento/PlanejamentoPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Planejamento.PlanejamentoPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Planejamento/PlanejamentoPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Planejamento/PlanejamentoPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Receita/ReceitaAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Receita.ReceitaAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Receita/ReceitaAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Receita/ReceitaAddPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Receita/ReceitaEditarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Receita.ReceitaEditarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Receita/ReceitaEditarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Receita/ReceitaEditarPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Pages/Receita/ReceitaPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Pages.Receita.ReceitaPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages/Receita/ReceitaPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages/Receita/ReceitaPage.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PersonalFinanceApp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml

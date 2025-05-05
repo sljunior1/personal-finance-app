@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:controls="clr-namespace:PersonalFinanceApp.Controls"
+             x:Class="PersonalFinanceApp.ReceitaPage"
+             Shell.NavBarIsVisible="False" BackgroundColor="#FF2E2929">
+<ContentPage.Behaviors>
+    <toolkit:StatusBarBehavior StatusBarColor="#FF2E2929"/>
+</ContentPage.Behaviors>
+<Grid Margin="0">
+      <Grid.RowDefinitions>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="94*"/>
+        </Grid.RowDefinitions>   
+
+        <controls:TituloCustom Grid.Row="0" Titulo="RECEITAS" IsVisibleConfiguracao="False" IsVisibleAjuda="True" 
+                               IsVisibleAdicionar="True" AdicionarClicked="TituloCustom_AdicionarClicked" />  
+
+        <Grid Grid.Row="1" BackgroundColor="White">
+       <CollectionView x:Name="ReceitaListView"
+                            ItemsSource="{Binding Receitas}"
+                            SelectionMode="None"
+                            Margin="0,10,0,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Reveal">
+                                    <SwipeItem BackgroundColor="#95FF0000"
+                                               IconImageSource="ic_lixeira.png"
+                                               Invoked="SwipeItem_Invoked"
+                                               CommandParameter="{Binding .}" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Grid Padding="10" ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Column="1"
+                                       Text="{Binding Titulo}"
+                                       TextColor="#FF2E2929"
+                                       FontSize="Caption"
+                                       VerticalOptions="Center"/>
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+</Grid>
+</ContentPage>
