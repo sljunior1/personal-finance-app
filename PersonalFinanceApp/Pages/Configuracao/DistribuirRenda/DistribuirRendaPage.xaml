@@ -1,24 +1,81 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
-             xmlns:controls="clr-namespace:PersonalFinanceApp.Controls"
              x:Class="PersonalFinanceApp.DistribuirRendaPage"
-             Shell.NavBarIsVisible="False" BackgroundColor="#FF2E2929">
- <ContentPage.Behaviors>
-    <toolkit:StatusBarBehavior StatusBarColor="#FF2E2929"/>
-</ContentPage.Behaviors>
- <Grid Margin="0">
-      <Grid.RowDefinitions>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="94*"/>
-        </Grid.RowDefinitions>   
+             Title="Distribuição de Renda">
+    <VerticalStackLayout Padding="20" Spacing="15">
 
-        <controls:TituloCustom Grid.Row="0" Titulo="DISTRIBUIR RENDA" IsVisibleConfiguracao="False" IsVisibleAjuda="False"
-                               IsVisibleAdicionar="False" />  
+        <Picker x:Name="listGasto"
+                Title="Selecione o tipo de gasto"
+                FontSize="Medium"
+                SelectedIndexChanged="OnCategorySelected" />
 
-        <Grid Grid.Row="1" BackgroundColor="White">
-       
-        </Grid>
-</Grid>
+        <Entry x:Name="PercentageEntry"
+               Placeholder="Porcentagem (%)"
+               Keyboard="Numeric"
+               MaxLength="3"
+               FontSize="Medium"
+               ClearButtonVisibility="WhileEditing"
+               TextChanged="OnPercentageTextChanged" />
+
+        <Button x:Name="AddUpdateButton"
+                Text="Adicionar"
+                Clicked="OnAddUpdateClicked"
+                BackgroundColor="#28a745"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HorizontalOptions="Fill" />
+
+        <Label x:Name="TotalPercentageLabel"
+               Text="Total: 0%"
+               FontSize="Medium"
+               HorizontalOptions="Center" />
+
+        <CollectionView x:Name="DistributionList"
+                        HeightRequest="200"
+                        SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems Mode="Execute">
+                                <SwipeItem Text="Excluir"
+                                           BackgroundColor="#dc3545"
+                                           Command="{Binding BindingContext.DeleteCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <Grid Padding="10" ColumnDefinitions="*,*">
+                            <Label Text="{Binding Category}"
+                                   FontSize="Medium"
+                                   Grid.Column="0">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="2"
+                                                          Tapped="OnItemDoubleTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="{Binding Percentage, StringFormat='{0}%'}"
+                                   FontSize="Medium"
+                                   HorizontalOptions="End"
+                                   Grid.Column="1">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="2"
+                                                          Tapped="OnItemDoubleTapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Salvar"
+                Clicked="OnSaveClicked"
+                BackgroundColor="#28a745"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HorizontalOptions="Fill" />
+    </VerticalStackLayout>
 </ContentPage>

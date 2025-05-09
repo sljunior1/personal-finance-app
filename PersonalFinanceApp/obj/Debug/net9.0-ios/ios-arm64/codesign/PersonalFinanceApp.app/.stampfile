@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign 91E68749E2A2CB7403BE027008B75E9C333A4E00 --entitlements /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/obj/Debug/net9.0-ios/ios-arm64/Entitlements.xcent /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/ios-arm64/PersonalFinanceApp.app

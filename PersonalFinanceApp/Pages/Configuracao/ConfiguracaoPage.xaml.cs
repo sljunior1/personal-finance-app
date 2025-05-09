@@ -10,7 +10,6 @@ public partial class ConfiguracaoPage : ContentPage
     new MenuItemModel { Titulo = "Categorias", Icon = "ic_categoria.png", TipoPage = typeof(CategoriaPage) },
     new MenuItemModel { Titulo = "Tipos de Gastos", Icon = "ic_gastos.png", TipoPage = typeof(TipoGastoPage)  },
 	new MenuItemModel { Titulo = "Tipos de Ganhos", Icon = "ic_ganhos.png", TipoPage = typeof(TipoGanhoPage)  },
-    new MenuItemModel { Titulo = "Forma de Pagamento", Icon = "ic_pagamento.png" , TipoPage = typeof(FormaPagamentoPage)  },
 	new MenuItemModel { Titulo = "Cartões de Crédito", Icon = "ic_cartao.png", TipoPage = typeof(CartaoCreditoPage)  },
 	new MenuItemModel { Titulo = "Contas Bancárias", Icon = "ic_conta.png" , TipoPage = typeof(ContaBancariaPage)  },
     new MenuItemModel { Titulo = "Distribuição da renda", Icon = "ic_divisao.png" , TipoPage = typeof(DistribuirRendaPage)  }
