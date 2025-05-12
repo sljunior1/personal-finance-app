@@ -18,7 +18,43 @@
                                IsVisibleAdicionar="True" AdicionarClicked="TituloCustom_AdicionarClicked" />  
 
         <Grid Grid.Row="1" BackgroundColor="White">
-       
+       <CollectionView x:Name="listCategorias" 
+                           ItemsSource="{Binding Categorias}"
+                           Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems Mode="Execute">
+                                <SwipeItem IconImageSource="ic_lixeira.png"
+                                           BackgroundColor="#dc3545"
+                                           Command="{Binding BindingContext.DeleteCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <Grid Padding="10">
+                            <Label Text="{Binding Descricao}" 
+                                  FontSize="16" 
+                                  TextColor="Black" 
+                                  VerticalOptions="Center">
+                                  <Label.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="2" 
+                                                         Command="{Binding BindingContext.DoubleTapCommand, Source={x:Reference listCategorias}}" 
+                                                         CommandParameter="{Binding .}"/>
+                                </Label.GestureRecognizers>
+                                  </Label>
+                        </Grid>
+                    </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Label Text="Nenhuma categoria cadastrada." 
+                          FontSize="16" 
+                          TextColor="Gray" 
+                          HorizontalOptions="Center" 
+                          VerticalOptions="Center"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
         </Grid>
 </Grid>
 </ContentPage>

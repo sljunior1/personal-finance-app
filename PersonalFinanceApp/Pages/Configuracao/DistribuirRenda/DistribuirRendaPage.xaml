@@ -8,6 +8,7 @@
         <Picker x:Name="listGasto"
                 Title="Selecione o tipo de gasto"
                 FontSize="Medium"
+                ItemDisplayBinding="{Binding Descricao}"
                 SelectedIndexChanged="OnCategorySelected" />
 
         <Entry x:Name="PercentageEntry"
@@ -34,6 +35,7 @@
 
         <CollectionView x:Name="DistributionList"
                         HeightRequest="200"
+                        ItemsSource="{Binding DistribuirRenda}"
                         SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
@@ -47,7 +49,7 @@
                             </SwipeItems>
                         </SwipeView.LeftItems>
                         <Grid Padding="10" ColumnDefinitions="*,*">
-                            <Label Text="{Binding Category}"
+                            <Label Text="{Binding TipoGastoDescricao}"
                                    FontSize="Medium"
                                    Grid.Column="0">
                                 <Label.GestureRecognizers>
@@ -55,7 +57,7 @@
                                                           Tapped="OnItemDoubleTapped" />
                                 </Label.GestureRecognizers>
                             </Label>
-                            <Label Text="{Binding Percentage, StringFormat='{0}%'}"
+                            <Label Text="{Binding Porcentagem, StringFormat='{0}%'}"
                                    FontSize="Medium"
                                    HorizontalOptions="End"
                                    Grid.Column="1">

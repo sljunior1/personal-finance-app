@@ -17,7 +17,12 @@
                                IsVisibleAdicionar="False" />  
 
         <VerticalStackLayout Grid.Row="1" BackgroundColor="White" Padding="20" Spacing="15">
-            <Picker x:Name="BankPicker"
+        <Entry x:Name="txtApelido"
+               Placeholder="Apelido"
+               FontSize="Medium"
+               ClearButtonVisibility="WhileEditing" />
+
+            <Picker x:Name="selectBanco"
                 Title="Selecione o banco"
                 FontSize="Medium">
             <Picker.Items>
@@ -25,26 +30,27 @@
                 <x:String>Caixa Econômica</x:String>
                 <x:String>Genial</x:String>
                 <x:String>Itaú</x:String>
+                <x:String>Hantec</x:String>
                 <x:String>Nubank</x:String>
             </Picker.Items>
         </Picker>
 
-        <Entry x:Name="AgencyEntry"
+        <Entry x:Name="txtAgencia"
                Placeholder="Agência"
                Keyboard="Numeric"
                MaxLength="4"
                FontSize="Medium"
                ClearButtonVisibility="WhileEditing" />
 
-        <Entry x:Name="AccountEntry"
+        <Entry x:Name="txtConta"
                Placeholder="Conta (ex.: 123456-7)"
                Keyboard="Numeric"
-               MaxLength="8"
+               MaxLength="11"
                FontSize="Medium"
                ClearButtonVisibility="WhileEditing"
 />
 
-        <Picker x:Name="AccountTypePicker"
+        <Picker x:Name="selectTipoConta"
                 Title="Selecione o tipo de conta"
                 FontSize="Medium">
             <Picker.Items>
@@ -59,7 +65,8 @@
                 TextColor="White"
                 FontAttributes="Bold"
                 CornerRadius="8"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"
+                Clicked="Salvar_Clicked" />
         </VerticalStackLayout>
 </Grid>
 </ContentPage>

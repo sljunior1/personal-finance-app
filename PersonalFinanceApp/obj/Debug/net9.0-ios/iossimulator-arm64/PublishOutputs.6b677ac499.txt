@@ -49,6 +49,10 @@
 /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/Microsoft.Maui.dll
 /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/Microsoft.Maui.Essentials.dll
 /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/Microsoft.Maui.Graphics.dll
+/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/SQLite-net.dll
+/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/SQLitePCLRaw.batteries_v2.dll
+/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/SQLitePCLRaw.core.dll
+/Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/SQLitePCLRaw.provider.sqlite3.dll
 /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/PersonalFinanceApp.dll
 /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/Microsoft.CSharp.dll
 /Users/silasmovisis/Projetos/personal-finance-app/personal-finance-app/PersonalFinanceApp/bin/Debug/net9.0-ios/iossimulator-arm64/publish/../PersonalFinanceApp.app/Microsoft.VisualBasic.Core.dll

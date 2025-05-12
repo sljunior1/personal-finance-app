@@ -41,6 +41,13 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|iPhoneSimulator'">
+  		<MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|iPhone'">
+  		<MtouchLink>None</MtouchLink>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -62,6 +69,7 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="11.2.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.60" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 	</ItemGroup>
 
 </Project>

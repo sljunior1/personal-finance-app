@@ -54,14 +54,19 @@
                TextChanged="txtLimiteCartao_TextChanged"
                ClearButtonVisibility="WhileEditing" />
 
-        <Picker x:Name="CardBrandPicker"
+                <Entry x:Name="txtDataVencimentoFatura"
+               Placeholder="Dia vencimento da fatura"
+               FontSize="Medium"
+               Keyboard="Numeric"
+               MaxLength="2"
+               ClearButtonVisibility="WhileEditing" />
+
+        <Picker x:Name="selectBandeira"
                 Title="Selecione a bandeira"
                 FontSize="Medium">
             <Picker.Items>
                 <x:String>Visa</x:String>
                 <x:String>Mastercard</x:String>
-                <x:String>American Express</x:String>
-                <x:String>Elo</x:String>
             </Picker.Items>
         </Picker>
 
@@ -70,7 +75,8 @@
                 TextColor="White"
                 FontAttributes="Bold"
                 CornerRadius="8"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Fill"
+                Clicked="Salvar_Clicked"  />
         </VerticalStackLayout>
 </Grid>
 </ContentPage>

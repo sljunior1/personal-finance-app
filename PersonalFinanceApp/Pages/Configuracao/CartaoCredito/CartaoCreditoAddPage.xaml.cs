@@ -1,16 +1,20 @@
 using System.Globalization;
 using System.Text.RegularExpressions;
+using PersonalFinanceApp.Models;
+using PersonalFinanceApp.Services;
 
 namespace PersonalFinanceApp;
 
 public partial class CartaoCreditoAddPage : ContentPage
 {
+	private readonly DatabaseService _databaseService;
 	private bool _isFormatadoNumeroCartao;
 	private bool _isFormatadoValidadeCartao;
 	private bool _isFormatadoLimiteCartao;
 	public CartaoCreditoAddPage()
 	{
 		InitializeComponent();
+		_databaseService = new DatabaseService();
 	}
 
     private void txtNumeroCartao_TextChanged(object sender, TextChangedEventArgs e)
@@ -104,5 +108,69 @@ public partial class CartaoCreditoAddPage : ContentPage
             }
 
             _isFormatadoLimiteCartao = false;
+    }
+private async void Salvar_Clicked(object sender, EventArgs e)
+    {
+		try
+            {
+                string numeroCartao = txtNumeroCartao.Text.Replace(" ","");
+                string nomeTitular = txtNomeTitular.Text?.Trim();
+                string limiteSemFormatacao = txtLimiteCartao.Text.Replace("R$","");
+                decimal limiteCartao = decimal.Parse(limiteSemFormatacao);
+                string bandeira = selectBandeira.SelectedItem.ToString();
+                int diaFatura = int.Parse(txtDataVencimentoFatura.Text);
+
+                if (string.IsNullOrEmpty(numeroCartao))
+                {
+                    await DisplayAlert("Erro", "Por favor, preencha o número do cartão.", "OK");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(limiteSemFormatacao))
+                {
+                    await DisplayAlert("Erro", "Por favor, preencha o limite do cartão.", "OK");
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(bandeira))
+                {
+                    await DisplayAlert("Erro", "Por favor, selecione a bandeira do cartão.", "OK");
+                    return;
+                }
+
+                var existeCartoes = await _databaseService.ListarCartoesCreditoAsync();
+                if (existeCartoes.Any(et => et.Numero.Equals(numeroCartao, StringComparison.OrdinalIgnoreCase)))
+                {
+                    await DisplayAlert("Erro", "Já existe um cartão de crédito com essa numeração.", "OK");
+                    return;
+                }
+
+                var cartaoCredito = new CartaoCreditoModel
+                {
+                    Numero = numeroCartao,
+                    Bandeira = bandeira,
+                    CodigoSeguranca = txtCodigoSeguranca.Text,
+                    DataVencimento = txtValidade.Text,
+                     DiaVencimentoFatura = diaFatura,
+                    Limite = limiteCartao,
+                    Titular = nomeTitular
+                };
+
+                await _databaseService.SalvarCartaoCreditoAsync(cartaoCredito);
+
+                await DisplayAlert("Sucesso", "Cartão de Crédito cadastrado com sucesso!", "OK");
+
+                txtNumeroCartao.Text = string.Empty;
+                txtCodigoSeguranca.Text = string.Empty;
+                txtDataVencimentoFatura.Text = string.Empty;
+                txtLimiteCartao.Text = string.Empty;
+                txtNomeTitular.Text = string.Empty;
+                txtValidade.Text = string.Empty;
+                selectBandeira.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Erro", "Falha ao salvar o cartão de crédito. Tente novamente.", "OK");
+            }
     }
 }

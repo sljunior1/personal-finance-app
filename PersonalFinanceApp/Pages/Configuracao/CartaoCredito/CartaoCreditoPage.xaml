@@ -18,7 +18,63 @@
                                IsVisibleAdicionar="True" AdicionarClicked="TituloCustom_AdicionarClicked" />  
 
         <Grid Grid.Row="1" BackgroundColor="White">
-       
+       <CollectionView x:Name="listCartaoCredito" 
+                           ItemsSource="{Binding CartoesCredito}"
+                           Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+<SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems Mode="Execute">
+                                <SwipeItem IconImageSource="ic_lixeira.png"
+                                           BackgroundColor="#dc3545"
+                                           Command="{Binding BindingContext.DeleteCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+<Grid Padding="20">
+<Frame BorderColor="Gray"
+               CornerRadius="10"
+               HasShadow="True"
+               BackgroundColor="White"
+               Padding="10">
+            <Frame.Shadow>
+                <Shadow Brush="Gray"
+                        Offset="5,5"
+                        Radius="10"
+                        Opacity="0.5"/>
+            </Frame.Shadow>
+            <Grid ColumnDefinitions="*,Auto">
+             <Label Text="{Binding FormatacaoNumero}" Grid.Column="0"
+                    FontSize="16" 
+                    TextColor="Black" 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2" 
+                        Command="{Binding BindingContext.DoubleTapCommand, Source={x:Reference listCartaoCredito}}" 
+                        CommandParameter="{Binding .}"/>
+                    </Label.GestureRecognizers>
+            </Label>
+                <Image Source="{Binding IconBandeira}" Grid.Column="1"
+                       HeightRequest="30"
+                       WidthRequest="50"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"/>
+            </Grid>
+        </Frame>
+                        </Grid>
+                    </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Label Text="Nenhum cartão de crédito cadastrado." 
+                          FontSize="16" 
+                          TextColor="Gray" 
+                          HorizontalOptions="Center" 
+                          VerticalOptions="Center"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
         </Grid>
 </Grid>
 </ContentPage>

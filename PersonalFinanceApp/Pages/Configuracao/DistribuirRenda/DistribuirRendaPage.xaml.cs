@@ -1,207 +1,223 @@
-using Microsoft.Maui.Controls;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
+using PersonalFinanceApp.Models;
+using PersonalFinanceApp.Services;
 
-namespace PersonalFinanceApp
+namespace PersonalFinanceApp;
+
+public partial class DistribuirRendaPage : ContentPage
 {
-    public class DistributionItem
-    {
-        public string Category { get; set; }
-        public int Percentage { get; set; }
-    }
-
-    public partial class DistribuirRendaPage : ContentPage
-    {
-        private bool _isFormatting;
-        private ObservableCollection<DistributionItem> _distributions;
-        private List<string> _categories;
-        private DistributionItem _editingItem;
-        public ICommand DeleteCommand { get; private set; }
-
-        public DistribuirRendaPage()
+        private readonly DatabaseService _databaseService;
+        private ObservableCollection<DistribuirRendaModel> _distribuirRenda;
+        private ObservableCollection<TipoGastoModel> _tipoGastos;
+        private DistribuirRendaModel _selectDistribuirRenda;
+        public ObservableCollection<DistribuirRendaModel> DistribuirRenda
         {
-            InitializeComponent();
-            DeleteCommand = new Command<DistributionItem>(OnDelete);
+            get => _distribuirRenda;
+            set
+            {
+                _distribuirRenda = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<TipoGastoModel> TipoGastos
+        {
+            get => _tipoGastos;
+            set
+            {
+                _tipoGastos = value;
+                OnPropertyChanged();
+            }
+        }
+
+    public ICommand DeleteCommand { get; private set; } 
+	public DistribuirRendaPage()
+	{
+		InitializeComponent();
+            _databaseService = new DatabaseService();
+            DistribuirRenda = new ObservableCollection<DistribuirRendaModel>();
+            TipoGastos = new ObservableCollection<TipoGastoModel>();
+            DeleteCommand = new Command<DistribuirRendaModel>(async (distribuirRenda) => await DeleteDistribuirRenda(distribuirRenda));
             BindingContext = this;
-            InitializeData();
-        }
-
-        private void InitializeData()
-        {
-            _categories = new List<string>
+            InitializeDataAsync();
+	}
+	private async Task InitializeDataAsync()
+    {
+       try
             {
-                "Alimentação",
-                "Transporte",
-                "Moradia",
-                "Lazer",
-                "Saúde"
-            };
+                var tipoGastos = await _databaseService.ListarTipoGastosAsync();
+                TipoGastos.Clear();
 
-            _distributions = new ObservableCollection<DistributionItem>();
-            DistributionList.ItemsSource = _distributions;
-            _editingItem = null;
-            AtualizarCategoria();
-            AtualizarTotalPorcentagem();
-        }
+                foreach (var type in tipoGastos)
+                {
+                    TipoGastos.Add(type);
+                }
+                listGasto.ItemsSource = TipoGastos;
 
-        private void AtualizarCategoria()
-        {
-            var availableCategories = _categories
-                .Where(c => !_distributions.Any(d => d.Category == c) || (_editingItem != null && c == _editingItem.Category))
-                .ToList();
-            listGasto.ItemsSource = availableCategories;
-            listGasto.SelectedIndex = -1;
-            if (_editingItem != null)
-            {
-                listGasto.SelectedItem = _editingItem.Category;
-                PercentageEntry.Text = $"{_editingItem.Percentage}%";
-                AddUpdateButton.Text = "Atualizar";
+                var distribuir = await _databaseService.ListarDistribuirRendaAsync();
+                DistribuirRenda.Clear();
+                foreach (var dist in distribuir)
+                {
+                    var tipoGasto = TipoGastos.FirstOrDefault(t => t.Id == dist.TipoGastoId);
+                    dist.TipoGastoDescricao = tipoGasto?.Descricao ?? "Desconhecido";
+                    DistribuirRenda.Add(dist);
+                }
+
+                UpdateTotalPercentage();
+                UpdateCategoryPicker();
             }
-            else
+            catch (Exception ex)
             {
-                PercentageEntry.Text = string.Empty;
-                AddUpdateButton.Text = "Adicionar";
+                await DisplayAlert("Erro", "Falha ao carregar dados. Tente novamente.", "OK");
             }
-        }
-
-        private void AtualizarTotalPorcentagem()
+    }
+	private void UpdateCategoryPicker()
+    {
+        listGasto.ItemsSource = TipoGastos
+            .Where(c => !_distribuirRenda.Any(d => d.TipoGastoId == c.Id))
+            .ToList();
+            listGasto.SelectedItem = null;
+            AddUpdateButton.Text = "Adicionar";
+            PercentageEntry.Text = string.Empty;
+            _selectDistribuirRenda = null;
+    }
+	private void UpdateTotalPercentage()
         {
-            int total = _distributions.Sum(d => d.Percentage);
+            int total = DistribuirRenda.Sum(d => d.Porcentagem);
             TotalPercentageLabel.Text = $"Total: {total}%";
         }
 
         private void OnCategorySelected(object sender, EventArgs e)
         {
-            if (_editingItem == null)
-            {
-                PercentageEntry.Text = string.Empty;
-            }
+            UpdateAddButtonState();
         }
 
         private void OnPercentageTextChanged(object sender, TextChangedEventArgs e)
         {
-            if (_isFormatting)
-                return;
-
-            _isFormatting = true;
-
-            var entry = sender as Entry;
-            string text = Regex.Replace(entry.Text, "[^0-9]", "");
-
-            if (string.IsNullOrEmpty(text))
-            {
-                entry.Text = string.Empty;
-                _isFormatting = false;
-                return;
-            }
-
-            if (int.TryParse(text, out int value))
-            {
-                if (value > 100)
-                    value = 100;
-                entry.Text = $"{value}%";
-            }
-            else
-            {
-                entry.Text = string.Empty;
-            }
-
-            _isFormatting = false;
+            UpdateAddButtonState();
         }
-
-        private async void OnAddUpdateClicked(object sender, EventArgs e)
+        private void UpdateAddButtonState()
         {
-            string category = listGasto.SelectedItem?.ToString();
-            string percentageText = Regex.Replace(PercentageEntry.Text ?? "", "[^0-9]", "");
-
-            if (string.IsNullOrEmpty(category))
-            {
-                await DisplayAlert("Erro", "Por favor, selecione um tipo de gasto.", "OK");
-                return;
-            }
-
-            if (string.IsNullOrEmpty(percentageText) || !int.TryParse(percentageText, out int percentage) || percentage <= 0)
-            {
-                await DisplayAlert("Erro", "Por favor, insira uma porcentagem válida (1-100).", "OK");
-                return;
-            }
-
-            int currentTotal = _distributions.Where(d => d != _editingItem).Sum(d => d.Percentage);
-            if (currentTotal + percentage > 100)
-            {
-                await DisplayAlert("Erro", "A soma das porcentagens não pode exceder 100%.", "OK");
-                return;
-            }
-
-            if (_editingItem != null)
-            {
-                _distributions.Remove(_editingItem);
-                _distributions.Add(new DistributionItem
-                {
-                    Category = category,
-                    Percentage = percentage
-                });
-                _editingItem = null;
-            }
-            else
-            {
-                _distributions.Add(new DistributionItem
-                {
-                    Category = category,
-                    Percentage = percentage
-                });
-            }
-
-            AtualizarCategoria();
-            AtualizarTotalPorcentagem();
+            bool isValid = listGasto.SelectedItem != null && !string.IsNullOrEmpty(PercentageEntry.Text) && int.TryParse(PercentageEntry.Text, out int percentage) && percentage > 0;
+            AddUpdateButton.IsEnabled = isValid;
         }
-
-        private void OnItemDoubleTapped(object sender, EventArgs e)
-        {
-            var label = sender as Label;
-            _editingItem = label?.BindingContext as DistributionItem;
-            AtualizarCategoria();
-        }
-
-        private void OnDelete(DistributionItem item)
-        {
-            if (item != null)
-            {
-                _distributions.Remove(item);
-                if (_editingItem == item)
-                {
-                    _editingItem = null;
-                }
-                AtualizarCategoria();
-                AtualizarTotalPorcentagem();
-            }
-        }
-
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            if (!_distributions.Any())
+            try
             {
-                await DisplayAlert("Erro", "Adicione pelo menos uma distribuição antes de salvar.", "OK");
-                return;
-            }
+                foreach (var distribution in DistribuirRenda)
+                {
+                    if (distribution.Id == 0)
+                    {
+                        await _databaseService.SalvarDistribuirRendaAsync(distribution);
+                    }
+                    else
+                    {
+                        await _databaseService.SalvarDistribuirRendaAsync(distribution);
+                    }
+                }
 
-            int total = _distributions.Sum(d => d.Percentage);
-            if (total < 100)
+                await DisplayAlert("Sucesso", "Distribuições salvas com sucesso!", "OK");
+                await Navigation.PopAsync();
+            }
+            catch (Exception ex)
             {
-                await DisplayAlert("Erro", "A soma das porcentagens deve ser igual a 100%.", "OK");
-                return;
+                await DisplayAlert("Erro", "Falha ao salvar as distribuições.", "OK");
             }
-
-            await DisplayAlert("Sucesso", "Distribuição de renda cadastrada com sucesso!", "OK");
-
-            _distributions.Clear();
-            _editingItem = null;
-            AtualizarCategoria();
-            AtualizarTotalPorcentagem();
         }
-    }
+private async void OnAddUpdateClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listGasto.SelectedItem is not TipoGastoModel selectedType)
+                {
+                    await DisplayAlert("Erro", "Selecione um tipo de gasto.", "OK");
+                    return;
+                }
+
+                if (!int.TryParse(PercentageEntry.Text, out int percentage) || percentage <= 0 || percentage > 100)
+                {
+                    await DisplayAlert("Erro", "A porcentagem deve ser um número entre 1 e 100.", "OK");
+                    return;
+                }
+
+                int currentTotal = DistribuirRenda.Where(d => d != _selectDistribuirRenda).Sum(d => d.Porcentagem);
+                if (currentTotal + percentage > 100)
+                {
+                    await DisplayAlert("Erro", "A soma das porcentagens não pode exceder 100%.", "OK");
+                    return;
+                }
+
+                var distribution = _selectDistribuirRenda ?? new DistribuirRendaModel();
+                distribution.TipoGastoId = selectedType.Id;
+                distribution.Porcentagem = percentage;
+                distribution.TipoGastoDescricao = selectedType.Descricao;
+
+                if (_selectDistribuirRenda == null)
+                {
+                    // Adicionar nova distribuição
+                    DistribuirRenda.Add(distribution);
+                }
+
+                UpdateTotalPercentage();
+                UpdateCategoryPicker();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", "Falha ao processar a distribuição.", "OK");
+            }
+        }
+    private async Task DeleteDistribuirRenda(DistribuirRendaModel distribution)
+        {
+            try
+            {
+                if (distribution == null)
+                {
+                    return;
+                }
+
+                bool confirm = await DisplayAlert("Confirmação", $"Deseja excluir a distribuição para '{distribution.TipoGastoDescricao}'?", "Sim", "Não");
+                if (!confirm)
+                {
+                    return;
+                }
+
+                DistribuirRenda.Remove(distribution);
+                if (distribution.Id != 0)
+                {
+                    await _databaseService.ExcluiristribuirRendaAsync(distribution);
+                }
+
+                UpdateTotalPercentage();
+                UpdateCategoryPicker();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", "Falha ao excluir a distribuição.", "OK");
+            }
+        }
+    private async void OnItemDoubleTapped(object sender, EventArgs e)
+        {
+            try
+            {
+                var label = sender as Label;
+                var distribution = label?.BindingContext as DistribuirRendaModel;
+                if (distribution == null)
+                {
+                    return;
+                }
+
+                _selectDistribuirRenda = distribution;
+                listGasto.ItemsSource = TipoGastos;
+                listGasto.SelectedItem = TipoGastos.FirstOrDefault(t => t.Id == distribution.TipoGastoId);
+                PercentageEntry.Text = distribution.Porcentagem.ToString();
+                AddUpdateButton.Text = "Atualizar";
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", "Falha ao carregar a distribuição para edição.", "OK");
+            }
+        }
 }

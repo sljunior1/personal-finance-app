@@ -27,7 +27,8 @@
                     TextColor="White"
                     FontAttributes="Bold"
                     CornerRadius="8"
-                    HorizontalOptions="Fill" />
+                    HorizontalOptions="Fill"
+                    Clicked="Salvar_Clicked" />
         </VerticalStackLayout>
 </Grid>
 </ContentPage>

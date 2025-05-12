@@ -18,7 +18,74 @@
                                IsVisibleAdicionar="True" AdicionarClicked="TituloCustom_AdicionarClicked" />  
 
         <Grid Grid.Row="1" BackgroundColor="White">
-       
+       <CollectionView x:Name="listContasBancaria" 
+                           ItemsSource="{Binding ContasBancaria}"
+                           Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems Mode="Execute">
+                                <SwipeItem IconImageSource="ic_lixeira.png"
+                                           BackgroundColor="#dc3545"
+                                           Command="{Binding BindingContext.DeleteCommand, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                                           CommandParameter="{Binding .}" />
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+<Grid Padding="20">
+        <Frame BorderColor="Gray"
+               CornerRadius="10"
+               HasShadow="True"
+               BackgroundColor="White"
+               Padding="10">
+            <Frame.Shadow>
+                <Shadow Brush="Gray"
+                        Offset="5,5"
+                        Radius="10"
+                        Opacity="0.5"/>
+            </Frame.Shadow>
+            <Grid ColumnDefinitions="*,Auto">
+                <VerticalStackLayout Grid.Column="0">
+                    <Label Text="{Binding Apelido}" Grid.Column="0"
+                    FontSize="14" FontAttributes="Bold" Margin="0,0,0,7"
+                    TextColor="Black" 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"/>
+                    <Label Text="{Binding Agencia, StringFormat='Agência: {0}'}" Grid.Column="0"
+                    FontSize="14" 
+                    TextColor="Black" 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"/>
+                    <Label Text="{Binding Conta, StringFormat='Conta: {0}'}" Grid.Column="0"
+                    FontSize="14" 
+                    TextColor="Black" 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"/>
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="2" 
+                        Command="{Binding BindingContext.DoubleTapCommand, Source={x:Reference listContasBancaria}}" 
+                        CommandParameter="{Binding .}"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+                <Image Source="{Binding IconBanco}" Grid.Column="1"
+                       HeightRequest="30"
+                       WidthRequest="50"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"/>
+            </Grid>
+        </Frame>
+                        </Grid>
+                    </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Label Text="Nenhuma conta bancária cadastrada." 
+                          FontSize="16" 
+                          TextColor="Gray" 
+                          HorizontalOptions="Center" 
+                          VerticalOptions="Center"/>
+                </CollectionView.EmptyView>
+            </CollectionView>
         </Grid>
 </Grid>
 </ContentPage>

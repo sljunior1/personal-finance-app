@@ -16,8 +16,67 @@
         <controls:TituloCustom Grid.Row="0" Titulo="EDITAR CARTÃO DE CRÉDITO" IsVisibleConfiguracao="False" IsVisibleAjuda="False" 
                                IsVisibleAdicionar="False" />  
 
-        <Grid Grid.Row="1" BackgroundColor="White">
-       
+<VerticalStackLayout Grid.Row="1" BackgroundColor="White" Padding="20" Spacing="15">
+            <Entry x:Name="txtNumeroCartao"
+               Placeholder="Número do cartão"
+               Keyboard="Numeric"
+               MaxLength="19"
+               FontSize="Medium"
+               TextChanged="txtNumeroCartao_TextChanged"
+               ClearButtonVisibility="WhileEditing" />
+
+        <Entry x:Name="txtNomeTitular"
+               Placeholder="Nome do titular"
+               FontSize="Medium"
+               ClearButtonVisibility="WhileEditing" />
+
+        <Grid ColumnDefinitions="*,*">
+            <Entry x:Name="txtValidade"
+                   Placeholder="MM/AA"
+                   Keyboard="Numeric"
+                   MaxLength="5"
+                   FontSize="Medium"
+                   TextChanged="txtValidade_TextChanged"
+                   ClearButtonVisibility="WhileEditing"
+                   Grid.Column="0" />
+            <Entry x:Name="txtCodigoSeguranca"
+                   Placeholder="CVV"
+                   Keyboard="Numeric"
+                   MaxLength="3"
+                   FontSize="Medium"
+                   ClearButtonVisibility="WhileEditing"
+                   Grid.Column="1" />
         </Grid>
+        <Entry x:Name="txtLimiteCartao"
+               Placeholder="Limite do cartão de crédito"
+               FontSize="Medium"
+               Keyboard="Numeric"
+               TextChanged="txtLimiteCartao_TextChanged"
+               ClearButtonVisibility="WhileEditing" />
+
+                <Entry x:Name="txtDataVencimentoFatura"
+               Placeholder="Dia vencimento da fatura"
+               FontSize="Medium"
+               Keyboard="Numeric"
+               MaxLength="2"
+               ClearButtonVisibility="WhileEditing" />
+
+        <Picker x:Name="selectBandeira"
+                Title="Selecione a bandeira"
+                FontSize="Medium">
+            <Picker.Items>
+                <x:String>Visa</x:String>
+                <x:String>Mastercard</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Button Text="Salvar"
+                BackgroundColor="#28a745"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="8"
+                HorizontalOptions="Fill"
+                Clicked="Atualizar_Clicked"  />
+        </VerticalStackLayout>
 </Grid>
 </ContentPage>

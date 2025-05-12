@@ -142,11 +142,11 @@
 		</data>
 		<key>PersonalFinanceApp.dll</key>
 		<data>
-		9FGLCBwehs9oMsg1/9pUfGet/6k=
+		0HChm3fPhgKw17aoSzgXdjtMzus=
 		</data>
 		<key>PersonalFinanceApp.pdb</key>
 		<data>
-		VEVNiiZ2jm4KKmqvte5ur3tyHRw=
+		pFNjttMZtn8AmyU0iTYVCkwli+Y=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -155,6 +155,22 @@
 		<key>PrivacyInfo.xcprivacy</key>
 		<data>
 		+59cRc8ev+HwAO70fp1P8R6hyjc=
+		</data>
+		<key>SQLite-net.dll</key>
+		<data>
+		42PRq5815Oe9aTbb+iFnhBSgP3U=
+		</data>
+		<key>SQLitePCLRaw.batteries_v2.dll</key>
+		<data>
+		3eEu2R87cwTQ+GCZvNn72iYjcHw=
+		</data>
+		<key>SQLitePCLRaw.core.dll</key>
+		<data>
+		AEiE31IYMpCWbi+2HDV13xHlgUg=
+		</data>
+		<key>SQLitePCLRaw.provider.sqlite3.dll</key>
+		<data>
+		/OqigeuXI2L9prgtVOnnxCqgE0E=
 		</data>
 		<key>Settings.bundle/Root.plist</key>
 		<data>
@@ -1394,14 +1410,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+rnhxmFgc8/WuMpTb8iJM3hgX6mYyApzbA4xMhyE70I=
+			bmwBS2NLAguywt3HzUCJ1iVnFFB62fTKuu8gI36jmnY=
 			</data>
 		</dict>
 		<key>PersonalFinanceApp.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P8xG79RLfyoEZ8BCqmV577gWc/kZr1DkYwmjuvMMDRg=
+			u4Wf/W4DJbkAk/ZPYSRpDD+aKbTf9OfdeMiul1MGdhg=
 			</data>
 		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
@@ -1409,6 +1425,34 @@
 			<key>hash2</key>
 			<data>
 			vSdOCYnhm9fj+qcbPQi0IfGVKZjXx/f8EMHfqNdMxU8=
+			</data>
+		</dict>
+		<key>SQLite-net.dll</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/0h0FMSssyqe6OCqk97walP3tX35PS56JgVOGN+Fcj4=
+			</data>
+		</dict>
+		<key>SQLitePCLRaw.batteries_v2.dll</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GYVNzEX4ezJINQlWnBSCySOFfyn3DBc3murImG1EqeU=
+			</data>
+		</dict>
+		<key>SQLitePCLRaw.core.dll</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l57cyQVqwG1fUrEtm3czsSF5FKtQvxI6sxLgJ+esV6U=
+			</data>
+		</dict>
+		<key>SQLitePCLRaw.provider.sqlite3.dll</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Sn+GJwMFQ/ifB8eT2UGrF/BVLBi4yR3wYIKY7ADv96Y=
 			</data>
 		</dict>
 		<key>Settings.bundle/Root.plist</key>
